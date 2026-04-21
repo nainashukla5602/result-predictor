@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Result Predictor</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+width:400px;
+text-align:center;
+}
+
+h1{
+margin-bottom:25px;
+color:#333;
+font-size:28px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+background:#667eea;
+color:white;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#5a67d8;
+}
+
+.result{
+margin-top:20px;
+font-size:24px;
+font-weight:bold;
+color:#28a745;
+}
+
+.footer{
+margin-top:15px;
+font-size:14px;
+color:#777;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<h1>🎓 Student Predictor</h1>
+
+<form action="/predict" method="post">
+
+<input type="number" name="hours" placeholder="Study Hours" required>
+
+<input type="number" name="attendance" placeholder="Attendance %" required>
+
+<input type="number" name="marks" placeholder="Marks" required>
+
+<button type="submit">Predict Result</button>
+
+</form>
+
+<div class="result">
+{{ prediction }}
+</div>
+
+<div class="footer">
+AI Internship Project
+</div>
+
+</div>
+
+</body>
+</html>
